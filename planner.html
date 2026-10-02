@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Academic Planner | Hassan Ore-Oluwa Joseph</title>
+  <link rel="stylesheet" href="css/style.css">
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Hassan Ore-Oluwa Joseph</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" class="active">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="planner-page">
+
+    
+    <section class="planner-banner">
+      <h1>My Academic Planner</h1>
+      <p>
+        Use this planner to organize academic tasks, assignments, projects,
+        examinations, and other important activities. Add a task, mark it as
+        completed when finished, or delete it when it is no longer required.
+      </p>
+
+      <div class="progress-area">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p id="taskCount" class="progress-text"></p>
+      </div>
+    </section>
+
+    
+    <section class="planner-card">
+      <h2>Add a New Task</h2>
+
+      <form id="taskForm" class="planner-form">
+        <input type="text" id="taskInput" placeholder="Enter an academic task...">
+        <button type="submit" class="planner-add-btn">Add Task</button>
+      </form>
+      <span class="error" id="taskError"></span>
+
+      <h2 class="list-heading">Your Tasks</h2>
+      <ul id="taskList" class="planner-list"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Hassan Ore-Oluwa Joseph. All rights reserved.</p>
+  </footer>
+
+  <script src="js/planner.js"></script>
+
+</body>
+</html>

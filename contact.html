@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Hassan Ore-Oluwa Joseph</title>
+  <link rel="stylesheet" href="css/style.css">
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">Hassan Ore-Oluwa Joseph</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-intro">
+      <h1>Get In Touch</h1>
+      <p>Have a question or want to work together? Send me a message.</p>
+    </section>
+
+    <section class="contact-card">
+
+      <div class="contact-side">
+        <h2>Contact Information</h2>
+        <p>Feel free to reach out using any of the details below.</p>
+
+        <ul class="contact-details">
+          <li>
+            <span class="icon">&#128100;</span>
+            <div>
+              <small>Name</small>
+              <strong>Hassan Ore-Oluwa Joseph</strong>
+            </div>
+          </li>
+          <li>
+            <span class="icon">&#9993;</span>
+            <div>
+              <small>Email</small>
+              <a href="mailto:h.ore-oluwa5593@miva.edu.ng">h.ore-oluwa5593@miva.edu.ng</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon">&#128222;</span>
+            <div>
+              <small>Phone</small>
+              <a href="tel:+2347035789778">07035789778</a>
+            </div>
+          </li>
+          <li>
+            <span class="icon">&#127891;</span>
+            <div>
+              <small>School</small>
+              <strong>MIVA Open University</strong>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="contact-form-side">
+        <h2>Send a Message</h2>
+
+                <form id="contactForm" class="contact-form" novalidate>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name">
+          <span class="error" id="nameError"></span>
+
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com">
+          <span class="error" id="emailError"></span>
+
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" placeholder="07012345678">
+          <span class="error" id="phoneError"></span>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Type your message here"></textarea>
+          <span class="error" id="messageError"></span>
+
+          <button type="submit" class="send-btn" id="sendBtn">Send Message</button>
+          <p id="successMessage"></p>
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Hassan Ore-Oluwa Joseph. All rights reserved.</p>
+  </footer>
+
+  <script src="js/contact.js"></script>
+
+</body>
+</html>
