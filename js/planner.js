@@ -1,4 +1,3 @@
-// ARRAY: the list of tasks (each has text and a done status)
 let tasks = [
   { text: "Complete COS101 assignment", done: false },
   { text: "Study MTH101", done: false },
@@ -9,7 +8,6 @@ let tasks = [
   { text: "Prepare for upcoming examination", done: false }
 ];
 
-// Grab the parts of the page we need
 const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
@@ -17,7 +15,6 @@ const taskError = document.getElementById("taskError");
 const taskCount = document.getElementById("taskCount");
 const progressFill = document.getElementById("progressFill");
 
-// FUNCTION: draw the whole list on the page
 function renderTasks() {
   taskList.innerHTML = "";
 
@@ -27,7 +24,6 @@ function renderTasks() {
       li.classList.add("completed");
     }
 
-    // Box button: ☐ or ☑
     const toggleBtn = document.createElement("button");
     toggleBtn.className = "toggle-btn";
     toggleBtn.textContent = tasks[i].done ? "\u2611" : "\u2610";
@@ -36,13 +32,11 @@ function renderTasks() {
       toggleTask(i);
     });
 
-    // Task text
-    const span = document.createElement("span");
+     const span = document.createElement("span");
     span.className = "task-text";
     span.textContent = tasks[i].text;
 
-    // Delete button
-    const deleteBtn = document.createElement("button");
+       const deleteBtn = document.createElement("button");
     deleteBtn.className = "delete-btn";
     deleteBtn.textContent = "[Delete]";
     deleteBtn.addEventListener("click", function () {
@@ -58,25 +52,21 @@ function renderTasks() {
   updateCount();
 }
 
-// FUNCTION: add a task
 function addTask(text) {
   tasks.push({ text: text, done: false });
   renderTasks();
 }
 
-// FUNCTION: mark complete / not complete
 function toggleTask(index) {
   tasks[index].done = !tasks[index].done;
   renderTasks();
 }
 
-// FUNCTION: delete a task
 function deleteTask(index) {
   tasks.splice(index, 1);
   renderTasks();
 }
 
-// FUNCTION: show the count and fill the progress bar
 function updateCount() {
   let completed = 0;
   for (let i = 0; i < tasks.length; i++) {
@@ -95,7 +85,6 @@ function updateCount() {
   }
 }
 
-// EVENT: when "Add Task" is clicked (or Enter is pressed)
 taskForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const text = taskInput.value.trim();
@@ -111,5 +100,4 @@ taskForm.addEventListener("submit", function (event) {
   taskInput.focus();
 });
 
-// Show the list when the page first loads
 renderTasks();
