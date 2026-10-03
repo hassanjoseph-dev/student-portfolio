@@ -1,17 +1,13 @@
-// Paste your Formspree address between the quotation marks
 const FORM_URL = "https://formspree.io/f/xnpnrkvr";
 
-// Get the form and button
 const form = document.getElementById("contactForm");
 const sendBtn = document.getElementById("sendBtn");
 const successMessage = document.getElementById("successMessage");
 
-// Show an error message under a field
 function showError(fieldId, message) {
   document.getElementById(fieldId + "Error").textContent = message;
 }
 
-// Clear all error messages
 function clearErrors() {
   const fields = ["name", "email", "phone", "message"];
   for (let i = 0; i < fields.length; i++) {
@@ -20,19 +16,16 @@ function clearErrors() {
   successMessage.textContent = "";
 }
 
-// Check email format: text @ text . text
 function isValidEmail(email) {
   const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return pattern.test(email);
 }
 
-// Check phone has digits only
 function isDigitsOnly(phone) {
   const pattern = /^[0-9]+$/;
   return pattern.test(phone);
 }
 
-// Send the form data to Formspree
 function sendMessage(name) {
   sendBtn.disabled = true;
   sendBtn.textContent = "Sending...";
@@ -65,9 +58,8 @@ function sendMessage(name) {
     });
 }
 
-// Runs when the user clicks "Send Message"
 form.addEventListener("submit", function (event) {
-  event.preventDefault();   // stop the page from reloading
+  event.preventDefault();
   clearErrors();
 
   const name = document.getElementById("name").value.trim();
@@ -77,7 +69,6 @@ form.addEventListener("submit", function (event) {
 
   let isValid = true;
 
-  // 1. No field should be empty
   if (name === "") {
     showError("name", "Please enter your name.");
     isValid = false;
@@ -87,7 +78,7 @@ form.addEventListener("submit", function (event) {
     showError("email", "Please enter your email address.");
     isValid = false;
   } else if (!isValidEmail(email)) {
-    // 2. Email format must be valid
+    
     showError("email", "Please enter a valid email, e.g. name@example.com.");
     isValid = false;
   }
@@ -96,7 +87,7 @@ form.addEventListener("submit", function (event) {
     showError("phone", "Please enter your phone number.");
     isValid = false;
   } else if (!isDigitsOnly(phone)) {
-    // 3. Phone must contain only digits
+    
     showError("phone", "Phone number must contain digits only (0-9).");
     isValid = false;
   }
@@ -106,7 +97,6 @@ form.addEventListener("submit", function (event) {
     isValid = false;
   }
 
-  // Only send if everything is correct
   if (isValid) {
     sendMessage(name);
   }
